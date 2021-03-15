@@ -26,7 +26,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string|null
      */
-    // protected $namespace = 'App\\Http\\Controllers';
+     protected $namespace = 'App\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -46,7 +46,21 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            Route::prefix('accounts')
+                ->middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/accounts.php'));
         });
+
+        // Global constraints
+        Route::pattern('id', '[0-9]+');
+
+        //Route::bind('user', function ($value) {
+        //    return User::where('name', $value)->firstOrFail();
+        //});
+        //
+        //parent::boot();
     }
 
     /**
