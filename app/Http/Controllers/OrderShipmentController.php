@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class OrderShipmentController extends Controller
 {
+    public function index() {
+        return view('welcome');
+    }
     //To dispatch an event, you may call the static dispatch
     // method on the event. This method is made available on the event
     // by the Illuminate\Foundation\Events\Dispatchable trait.

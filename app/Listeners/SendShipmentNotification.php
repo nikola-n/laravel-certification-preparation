@@ -25,6 +25,6 @@ class SendShipmentNotification
      */
     public function handle($event)
     {
-        //
+        dump('send shippment');
     }
 }

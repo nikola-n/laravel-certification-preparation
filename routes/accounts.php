@@ -5,4 +5,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('members', 'AccountController@index')->name('members');
 
-Route::redirect('/here', '/there');
+//Route::redirect('/here', '/there');

@@ -16,4 +16,9 @@ class PhotoController extends Controller
         $this->int = $int;
     }
 
+    public function handle()
+    {
+        dump('hoho');
+    }
+
 }

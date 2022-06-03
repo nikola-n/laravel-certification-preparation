@@ -2,6 +2,8 @@
 
 namespace App\Listeners;
 
+use App\Events\OrderShipped;
+
 class UserEventSubscriber
 {
     /**
@@ -14,6 +16,9 @@ class UserEventSubscriber
      */
     public function handleUserLogout($event) {}
 
+    public function handleOrderShipment($event) {
+        dd('order shipped!');
+    }
     /**
      * Register the listeners for the subscriber.
      *
@@ -30,6 +35,11 @@ class UserEventSubscriber
         $events->listen(
             'Illuminate\Auth\Events\Logout',
             [UserEventSubscriber::class, 'handleUserLogout']
+        );
+
+        $events->listen(
+            OrderShipped::class,
+            [UserEventSubscriber::class, 'handleOrderShipment']
         );
     }
 }

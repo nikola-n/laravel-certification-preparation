@@ -54,7 +54,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         // Global constraints
-        Route::pattern('id', '[0-9]+');
+        //Route::pattern('id', '[0-9]+');
 
         //Route::bind('user', function ($value) {
         //    return User::where('name', $value)->firstOrFail();
